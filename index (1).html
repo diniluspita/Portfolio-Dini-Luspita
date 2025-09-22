@@ -1,0 +1,79 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Portfolio — (Original PPTX Viewer)</title>
+<style>
+  body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:#f3f4f6; color:#111827; margin:0; padding:24px; }
+  .container{ max-width:980px; margin:0 auto; }
+  header{ background:white; padding:18px 20px; border-radius:10px; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+  h1{ margin:0; font-size:20px; }
+  .card{ background:white; padding:16px; margin-top:16px; border-radius:10px; box-shadow:0 1px 2px rgba(0,0,0,0.04); }
+  a.btn{ display:inline-block; padding:10px 14px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; }
+  .note{ font-size:13px; color:#374151; margin-top:8px; }
+  iframe.viewer, object.viewer { width:100%; height:640px; border:1px solid #e5e7eb; border-radius:8px; }
+  pre { background:#111827; color:#f8fafc; padding:12px; border-radius:8px; overflow:auto; }
+  code{ color:#10b981; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Portfolio — tampilkan file asli (PPTX)</h1>
+    <p class="note">Halaman ini menampilkan file PPTX original yang tidak diubah sama sekali. Pastikan file PPTX (namanya <code>Portfolio_DINI LUSPITA-1.pptx</code>) ikut di-upload ke folder yang sama saat kamu deploy.</p>
+  </header>
+
+  <div class="card">
+    <h2>1) Unduh file PPTX asli</h2>
+    <p>Klik tombol di bawah untuk mendownload file presentasi aslinya (tidak ada perubahan).</p>
+    <p><a href="Portfolio_DINI LUSPITA-1.pptx" class="btn" download>Download PPTX asli</a></p>
+    <p class="note">Jika file bernama berbeda, ganti nama file di server jadi <code>Portfolio_DINI LUSPITA-1.pptx</code> atau sesuaikan link download.</p>
+  </div>
+
+  <div class="card">
+    <h2>2) Tampilkan langsung (browser behavior bervariasi)</h2>
+    <p class="note">Beberapa browser tidak langsung merender file PPTX dan akan mengunduhnya. Namun, kami menyertakan <code>iframe</code>/<code>object</code> yang mencoba menampilkan file apabila browser mendukung preview.</p>
+    <iframe class="viewer" src="Portfolio_DINI LUSPITA-1.pptx"></iframe>
+    <p class="note">Jika iframe di atas tidak tampil (hanya download), itu karena browser tidak mendukung preview PPTX. Lanjut ke opsi nomor 3 untuk pengalaman yang paling mirip tampilan asli.</p>
+  </div>
+
+  <div class="card">
+    <h2>3) (Direkomendasikan) Tampilkan via Microsoft Office Online Viewer</h2>
+    <p class="note">Office Online Viewer dapat menampilkan PPTX persis seperti aslinya dalam browser. Caranya: upload file PPTX ke GitHub (atau server publik), lalu gunakan URL raw file di Office Viewer.</p>
+
+    <h3>Langkah singkat</h3>
+    <ol>
+      <li>Upload file <code>Portfolio_DINI LUSPITA-1.pptx</code> ke repository GitHub kamu di folder root.</li>
+      <li>Dapatkan link raw file GitHub: <br>
+        <code>https://raw.githubusercontent.com/USERNAME/REPO/main/Portfolio_DINI%20LUSPITA-1.pptx</code>
+        <br>-- Ganti <code>USERNAME</code> dan <code>REPO</code> sesuai akun & repo kamu. Perhatikan spasi diganti dengan <code>%20</code> pada URL raw jika ada.</li>
+      <li>Buka Office Online embed URL berikut (copy-paste di browser):</li>
+    </ol>
+
+    <pre id="office-sample">https://view.officeapps.live.com/op/embed.aspx?src=PASTE_RAW_FILE_URL_HERE</pre>
+
+    <p class="note">Contoh lengkap (ganti USERNAME & REPO):</p>
+    <pre>https://view.officeapps.live.com/op/embed.aspx?src=https://raw.githubusercontent.com/USERNAME/Portfolio-Dini-Luspita/main/Portfolio_DINI%20LUSPITA-1.pptx</pre>
+
+    <p class="note">Jika ingin, kamu bisa menaruh iframe Office Viewer di file <code>index.html</code> setelah mengganti <code>PASTE_RAW_FILE_URL_HERE</code>:</p>
+    <pre>&lt;iframe class="viewer" src="https://view.officeapps.live.com/op/embed.aspx?src=PASTE_RAW_FILE_URL_HERE"&gt;&lt;/iframe&gt;</pre>
+    <p class="note">Dengan cara ini, tampilan slide akan sama persis seperti file aslinya.</p>
+  </div>
+
+  <div class="card">
+    <h2>Catatan teknis penting</h2>
+    <ul>
+      <li>Jangan ubah file PPTX asli — halaman ini hanya menunjuk ke file aslinya.</li>
+      <li>Pastikan file PPTX di-upload ke folder yang sama saat kamu deploy (root repository) agar link relatif bekerja: <code>Portfolio_DINI LUSPITA-1.pptx</code>.</li>
+      <li>Jika repo GitHub mengandung spasi di nama file, raw URL akan meng-encode spasi menjadi <code>%20</code>.</li>
+    </ul>
+  </div>
+
+  <footer style="text-align:center; margin-top:18px; color:#6b7280;">
+    Buat oleh asisten — file asli tetap utuh dan tidak diubah.
+  </footer>
+</div>
+</body>
+</html>
